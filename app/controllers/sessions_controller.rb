@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         else
             #possible flash error message "incorrect login data"
             #flash[:message] = "Incorrect login info, please try again."
-            #need to decide where 
+            #need to decide where to display errors (navigation or within form?)
             redirect_to "/login"
         end
     end

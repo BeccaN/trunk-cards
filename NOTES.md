@@ -44,7 +44,8 @@ TODO:
 
 # figure out how to hide layout on certain pages
 # figure out flash error messages
-
+# before_action
+# field with errors? utilizing this for error dispaly?
 
 ## nested routes
 # new category route is nested under Groups '/groups/:id/categories/new

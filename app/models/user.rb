@@ -10,7 +10,9 @@ class User < ApplicationRecord
     :length => {:within => 6..40},
     :on => :create
 
-    # email validations
-    # name validations
+    validates :email, :presence => true
 
+    validates :name, :presence => true,
+    :length => {:within => 6..10}
+    
 end
