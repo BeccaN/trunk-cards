@@ -9,15 +9,15 @@ class UsersController < ApplicationController
             #login the user
             session[:user_id] = @user.id
             #redirect to user show page
-            redirect_to controller: 'groups', action: 'index'
+            redirect_to @user
         else
             render :new
         end
-
     end
 
     def show
-
+        @user = User.find_by_id(params[:id])
+        redirect_to root_path if !@user
     end
 
     private

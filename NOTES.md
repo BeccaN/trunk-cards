@@ -39,11 +39,12 @@ Controllers:
 * group
 
 TODO:
-# make user signup function
-# make user login/logout/session controller function
+# add User email and name validations
 # setup validations for user
 
 # figure out how to hide layout on certain pages
+# figure out flash error messages
+
 
 ## nested routes
 # new category route is nested under Groups '/groups/:id/categories/new

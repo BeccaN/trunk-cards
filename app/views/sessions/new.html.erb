@@ -1,8 +1,10 @@
 <h1>Login</h1>
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-    <input name=email>
+<%= form_for :user do |f| %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
     <br />
-    <input name=password>
-    <br />
-    <input type=submit value='Login'>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.submit 'Login' %>
 <% end %>

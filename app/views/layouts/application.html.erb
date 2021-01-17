@@ -19,11 +19,12 @@
     </div>
     <div class="links">
       <%= link_to "Log out", logout_path, method: "delete" %>
-
+      <%= link_to "Card Sets", groups_path %>
     </div>
   </div>
 
   <body>
         <%= yield %>
   </body>
+
 </html>
