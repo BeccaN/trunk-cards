@@ -39,30 +39,43 @@ Controllers:
 * group
 
 TODO:
+
+# routes/pages/basic functionality
+## SESSION
+* login - 
+* logout - 
+* welcome/home - 
+
 ## USER
-# change user#show to nested route groups#index
-- get '/users/:id/groups', to: 'groups#index'
-- 
+* get '/users/:id/groups', to: 'groups#index' (user main page w/ all groups listed)
+* get '/users/:id/groups/new (create a new group under the current user)
+* get '/users/:id/groups/edit (edit group contents)
 
 ## GROUP
-# setup create new group form (nested card creation)
-    * user chooses category first (seperate page) then redirected to group page
-    * get '/categories/:id/groups/new', to: 'cards#new'
-# setup edit group (only user that created group can edit)
-# group show page/study mode
+* get '/group/:id/study' (custom route to show page/study mode)
 
 ## CATEGORY
-# category index page (all categories)
-# category show page (all groups created under this category)
-# user can subscribe to another users group/set
+* '/categories/index'(lists out all categories that exist)
+* '/category/:id/groups' (nested route for displaying all groups under a category)
 
-## ADMIN (OPTIONAL, nested resources)
-# user index page
-# option to delete user
 
 # figure out flash error messages (field with errors)
 # before_actions added to other controllers
 # make sure only needed routes are in routes
+# admin mode?
+# omniauth
+# finish layout links and add in logo
+# beautify all pages 
+    * welcome
+    * login
+    * signup
+    * user/groups
+    * categor/index
+    * category/groups
+    * group/study
+    * new group
+    * edit group
+# go through all Rails lessons backwards, add in anything extra that works. 
 
 * partial - repetitive html
 * helper - view logic 

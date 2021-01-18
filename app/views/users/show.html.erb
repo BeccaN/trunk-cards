@@ -1,1 +1,4 @@
 <h1><%= @user.name %></h1>
+<%= link_to 'See All Groups', user_groups_path(@user) %>
+<%= link_to 'Create New Group', new_user_group_path(@user) %>
+

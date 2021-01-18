@@ -16,3 +16,5 @@ class User < ApplicationRecord
     :length => {:within => 6..10}
     
 end
+
+#'/users/:id/groups'

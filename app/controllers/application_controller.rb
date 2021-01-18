@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_logged_in
+        # flash[:message] = "Please log into your account." (need to figure out a way to display this error so it actually appears/disappears when I need it)
         redirect_to '/' if !logged_in?
     end
 end
