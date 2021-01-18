@@ -39,33 +39,17 @@ Controllers:
 * group
 
 TODO:
+* omniauth
+* Add navigation links to layout and logo
+* remove user#show, make user main page user/id/groups#index page
+* create new group form with nested category and card creation
+* add validations to all models
+* create scope model method (subscribe to other user group?) 
+* setup group#show page as study page
 
-# routes/pages/basic functionality
-## SESSION
-* login - 
-* logout - 
-* welcome/home - 
-
-## USER
-* get '/users/:id/groups', to: 'groups#index' (user main page w/ all groups listed)
-* get '/users/:id/groups/new (create a new group under the current user)
-* get '/users/:id/groups/edit (edit group contents)
-
-## GROUP
-* get '/group/:id/study' (custom route to show page/study mode)
-
-## CATEGORY
-* '/categories/index'(lists out all categories that exist)
-* '/category/:id/groups' (nested route for displaying all groups under a category)
-
-
-# figure out flash error messages (field with errors)
-# before_actions added to other controllers
-# make sure only needed routes are in routes
-# admin mode?
-# omniauth
-# finish layout links and add in logo
-# beautify all pages 
+* add in flash[:messages], before_actions/checks for 'current_user' and 'logged_in?' when appropriate
+* consider making category/groups nested route? 
+* beautify all pages 
     * welcome
     * login
     * signup
@@ -75,8 +59,10 @@ TODO:
     * group/study
     * new group
     * edit group
-# go through all Rails lessons backwards, add in anything extra that works. 
+* go through all Rails lessons backwards, add what feels necessary, DRY up whatever I possibly can
+* STRETCH: add leitner study system?
 
+NOTES:
 * partial - repetitive html
 * helper - view logic 
 * model method - model logic 
