@@ -9,11 +9,11 @@ Specs:
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
 - [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-- [ ] Include signup
-- [ ] Include login
-- [ ] Include logout
+- [x] Include signup
+- [x] Include login
+- [x] Include logout
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
@@ -39,19 +39,30 @@ Controllers:
 * group
 
 TODO:
-# add User email and name validations
-# setup validations for user
+## USER
+# change user#show to nested route groups#index
+- get '/users/:id/groups', to: 'groups#index'
+- 
 
-# figure out how to hide layout on certain pages
-# figure out flash error messages
-# before_action
-# field with errors? utilizing this for error dispaly?
+## GROUP
+# setup create new group form (nested card creation)
+    * user chooses category first (seperate page) then redirected to group page
+    * get '/categories/:id/groups/new', to: 'cards#new'
+# setup edit group (only user that created group can edit)
+# group show page/study mode
 
-## nested routes
-# new category route is nested under Groups '/groups/:id/categories/new
-- get '/groups/:id/categories/new', to: 'categories#new' 
-# make groups index route nested under Users
-- get '/users/:id/groups/index', to: 'groups#index'
+## CATEGORY
+# category index page (all categories)
+# category show page (all groups created under this category)
+# user can subscribe to another users group/set
+
+## ADMIN (OPTIONAL, nested resources)
+# user index page
+# option to delete user
+
+# figure out flash error messages (field with errors)
+# before_actions added to other controllers
+# make sure only needed routes are in routes
 
 * partial - repetitive html
 * helper - view logic 

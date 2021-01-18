@@ -18,10 +18,13 @@
       <!-- logo aligns left side -->
     </div>
     
-    <!-- links only visible when logged_in? -->
+    <!-- move this logic to  -->
+    <% if logged_in? %>
     <div class="links">
-      <!-- aligns right side- logout, user page, categories, create new set -->
+      <%= link_to 'Logout', logout_path, method:'delete' %>
+      <!-- aligns right side-user page, categories, create new set -->
     </div>
+    <% end %>
   </div>
 
   <body>
