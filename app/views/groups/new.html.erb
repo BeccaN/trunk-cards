@@ -1,6 +1,73 @@
-<%= render 'form' %>
 <h2>New Group Form Page!</h2>
+
+<%= form_for(@group) do |f| %>
+
+<p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+</p>
+
+<p>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+</p>
+<p>
+Select Category: <%= f.collection_select :category_id, Category.all, :id, :name %>
+</p>
+<br />
+
+<%= f.submit 'Submit' %>
+<% end %>
+
+
+
+
+
+
+<!-- Solution to dynamically add cards to form? -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<div id="original-inputs">
+  <label>Label</label>
+  <input name='label' />
+  <label>Amount</label>
+  <input name='amount' />
+  <br/>
+</div>
+
+<div id="dynamic-inputs"></div>
+
+<button type='button' onclick="addMore()">Add More (+)</button>
+<button id='sendRequest' onclick='submiForm()'>submit</button>
+
+
+<script>
+    function addMore(){
+    $("#dynamic-inputs").append($("#original-inputs").html())
+  }
+
+  function submiForm() {
+    let data = []
+    $("[name='label']").each((i, item)=>
+    {
+      data.push({'label': item.value, 'amount':  $("[name='amount']")[i].value})
+    })
+    console.log({'quote_amounts': data})
+    $.ajax({
+        url: 'urlOfYourActionController',
+        data: {'quote_amounts': data},
+        type: 'POST',
+        success: function(data){
+            // handle your success here
+            console.log(data);
+        }
+    });
+  }
+</script>
+
 <!-- Form goes here... 
+
     include hidden_field :user_id so nested new group route knows where to get id 
 
     t.string "title" - text field

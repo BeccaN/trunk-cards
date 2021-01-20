@@ -1,5 +1,5 @@
 <h2>Groups Index</h2>
 
 <% @groups.each do |group| %>
-    <%= group.title %> | <%= group.description %> <br />
+    <%= group.title %> | <%= group.description %> | <%= group.category.name %> <br />
 <% end %>

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create, :index] #eventually delete user#show once we replace all necessary links to users/id/groups
-  resources :groups, only: [:edit, :show, :destroy]
+  resources :groups
   resources :categories, only: [:index, :show]
 
   resources :cards #might be able to delete, test this after the group form is complete and working

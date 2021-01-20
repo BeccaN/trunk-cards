@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
     end
 
     def create
-        @group = current_user.posts.build(group_params)
+        @group = current_user.groups.build(group_params)
         if @group.save
             redirect_to user_groups_path(current_user)
         else
@@ -33,6 +33,6 @@ class GroupsController < ApplicationController
     private
 
         def group_params
-            
+            params.require(:group).permit(:title, :description, :category_id)
         end
 end 
