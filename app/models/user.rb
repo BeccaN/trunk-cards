@@ -6,15 +6,18 @@ class User < ApplicationRecord
     has_secure_password
 
     validates :password, :presence => true,
-    :confirmation => true,
-    :length => {:within => 6..40},
-    :on => :create
+    :length => {minimum: 6}
 
-    validates :email, :presence => true
+    validates :email, :presence => true,
+    :uniqueness => true
 
     validates :name, :presence => true,
-    :length => {:within => 6..10}
+    :length => {minimum: 6}
     
+    def self.github_omniauth(auth)
+        self.find_or_create_by(email: auth[:info][:email]) do |user|
+            user.name = auth[:info][:nickname]
+            user.password = SecureRandom.hex(20)
+        end
+    end
 end
-
-#'/users/:id/groups'

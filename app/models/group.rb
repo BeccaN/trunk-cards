@@ -3,6 +3,6 @@ class Group < ApplicationRecord
     belongs_to :category
     belongs_to :user
 
-    ##validations
-    #presence true for title and description
+    validates :title, :description, presence: true
+    
 end

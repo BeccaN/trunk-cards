@@ -14,7 +14,7 @@ Specs:
 - [x] Include logout
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
@@ -23,33 +23,17 @@ Confirm:
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
 
-Features:
-scope method: filter Sets by category
-view helper method: create sequence to view all Cards in Set
-model method: User can subscribe to another Users flash card Set
-
-Stretch goals:
-* beautify route names
-* incorporate scope method where User can organize sets by date last studied/opened
-* incorporate Leitner method 
-
-Controllers:
-* user
-* category
-* group
-
 TODO:
-* omniauth
-* Add navigation links to layout and logo
-* remove user#show, make user main page user/id/groups#index page
 * create new group form with nested category and card creation
-* add validations to all models
 * create scope model method (subscribe to other user group?) 
-* setup group#show page as study page
+    * category#index order by name
+    * category#index order by number of groups
+    * user#groups order by category name
 
-* add in flash[:messages], before_actions/checks for 'current_user' and 'logged_in?' when appropriate
+* setup group#show page as study page
+* add in flash[:messages] to validations?, before_actions/checks for 'current_user' and 'logged_in?' when appropriate
 * consider making category/groups nested route? 
-* beautify all pages 
+* beautify all pages
     * welcome
     * login
     * signup
@@ -60,7 +44,9 @@ TODO:
     * new group
     * edit group
 * go through all Rails lessons backwards, add what feels necessary, DRY up whatever I possibly can
+* STRETCH: add column to group that tracks when user last studied, then add scope order method
 * STRETCH: add leitner study system?
+* STRETCH: add subscription function
 
 NOTES:
 * partial - repetitive html

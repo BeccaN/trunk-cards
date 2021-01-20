@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   #welcome/home route
   root 'sessions#home'
   
-  get '/auth/:google_oauth2/callback' => 'sessions#omniauth'
   #signup route
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -15,14 +14,15 @@ Rails.application.routes.draw do
   #logout route
   delete '/logout', to: 'sessions#destroy'
 
-  #
   resources :users do
     resources :groups, only: [:new, :create, :index]
   end
 
-  resources :users, only: [:new, :create, :index, :show] #eventually delete user#show once we replace all necessary links to users/id/groups
+  resources :users, only: [:new, :create, :index] #eventually delete user#show once we replace all necessary links to users/id/groups
   resources :groups, only: [:edit, :show, :destroy]
   resources :categories, only: [:index, :show]
 
   resources :cards #might be able to delete, test this after the group form is complete and working
+
+  match '/auth/github/callback', to: 'sessions#github', via: [:get, :post]
 end

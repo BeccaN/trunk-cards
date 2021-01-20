@@ -12,17 +12,28 @@
  *
  *= require_tree .
  *= require_self
+
+ .topnav, .logo, .links, .wrapper
  */
 * {
     font-family: 'Roboto Mono', monospace;
 }
 
-.links {
-    float: right;
+body {
+    background-color: #CAD2D9;
 }
 
-/* .body {
-    margin: auto;
-    width: 50%;
-    padding: 50px; 10px; 
-} */
+.wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+  }
+
+.nav .links {
+    float: right;
+}

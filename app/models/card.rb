@@ -1,6 +1,5 @@
 class Card < ApplicationRecord
     belongs_to :group
 
-    ##validations
-    #front and back present
+    validates :front,:back, presence: true
 end

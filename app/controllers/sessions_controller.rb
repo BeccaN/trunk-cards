@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    
+
     def home
     end
 
@@ -8,20 +10,32 @@ class SessionsController < ApplicationController
     end
 
     def new
+
     end
 
     def create
         user = User.find_by(email: params[:user][:email])
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id
-            redirect_to user
+            redirect_to user_groups_path(user)
         else
-            #possible flash error message "incorrect login data"
-            #flash[:message] = "Incorrect login info, please try again."
-            #need to decide where to display errors (navigation or within form?)
             redirect_to "/login"
         end
     end
 
+    def github
+        @user = User.github_omniauth(auth)
+        if @user.save
+            session[:user_id] = @user.id
+            redirect_to user_groups_path(@user)
+        else 
+            render :home
+        end
+    end
 
+    private
+
+        def auth
+            request.env['omniauth.auth']
+        end
 end

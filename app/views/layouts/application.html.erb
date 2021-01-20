@@ -13,27 +13,31 @@
     
   </head>
 
-  <div class="topnav">
-    <div class="logo">
-      <!-- logo aligns left side -->
-    </div>
-    
-    <!-- move this logic to  -->
-    <% if logged_in? %>
-    <div class="links">
-      <%= link_to 'Logout', logout_path, method:'delete' %>
-      <!-- aligns right side-user page, categories, create new set -->
-    </div>
-    <% end %>
-  </div>
-
-  <div>
-    <% if flash[:message] %>
-      <%= flash[:message] %>
-    <% end %>
-  </div>
   <body>
-        <%= yield %>
-  </body>
+    <div class='wrapper'>
+    <div class='nav'>
+      <!-- <div class="logo">
+        <%= image_tag "elephant-02.png", style: 'width:150px;' %>
+      </div> -->
 
+      <% if logged_in? %>
+      <div class="links">
+        <%= link_to current_user.name, user_groups_path(current_user) %> | 
+        <%= link_to 'Logout', logout_path, method:'delete' %> | 
+        <%= link_to 'Create Group', new_user_group_path(current_user) %> | 
+        <%= link_to 'Categories', categories_path %>
+      </div>
+      <% end %>
+
+      <h1>Trunk Cards</h1>
+
+      <% if flash[:message] %>
+        <%= flash[:message] %>
+      <% end %>
+    </div>
+
+
+  <%= yield %>
+    </div>
+  </body>
 </html>
