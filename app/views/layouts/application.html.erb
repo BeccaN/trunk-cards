@@ -16,9 +16,6 @@
   <body>
     <div class='wrapper'>
     <div class='nav'>
-      <!-- <div class="logo">
-        <%= image_tag "elephant-02.png", style: 'width:150px;' %>
-      </div> -->
 
       <% if logged_in? %>
       <div class="links">
@@ -31,11 +28,11 @@
 
       <h1>Trunk Cards</h1>
 
-      <% if flash[:message] %>
-        <%= flash[:message] %>
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
       <% end %>
+      
     </div>
-
 
   <%= yield %>
     </div>

@@ -1,0 +1,7 @@
+<h1><%= @group.title %></h1>
+
+<% @group.cards.each do |card| %>
+<li><%= card.front %> - <%= card.back%></li>
+<% end %>
+
+<%= link_to 'Edit Group Contents', edit_group_path(@group) %>

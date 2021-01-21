@@ -7,12 +7,12 @@ Specs:
 - [x] Include at least two has_many through relationships (x has_many y through z; e.g. Recipe has_many Items through Ingredients)
 - [x] Include at least one many-to-many relationship (x has_many y through z, y has_many x through z; e.g. Recipe has_many Items through Ingredients, Item has_many Recipes through Ingredients)
 - [x] The "through" part of the has_many through includes at least one user submittable attribute, that is to say, some attribute other than its foreign keys that can be submitted by the app's user (attribute_name e.g. ingredients.quantity)
-- [ ] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+- [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
 - [x] Include signup
 - [x] Include login
 - [x] Include logout
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth)
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
@@ -24,15 +24,11 @@ Confirm:
 - [ ] Views use partials if appropriate
 
 TODO:
-* create new group form with nested category and card creation
-* create scope model method (subscribe to other user group?) 
-    * category#index order by name
-    * category#index order by number of groups
-    * user#groups order by category name
-
-* setup group#show page as study page
 * add in flash[:messages] to validations?, before_actions/checks for 'current_user' and 'logged_in?' when appropriate
-* consider making category/groups nested route? 
+* go through all Rails lessons backwards, add what feels necessary, DRY up whatever I possibly can
+* create scope order categories by total groups
+* card creation is optional?
+* add category search filter
 * beautify all pages
     * welcome
     * login
@@ -43,7 +39,6 @@ TODO:
     * group/study
     * new group
     * edit group
-* go through all Rails lessons backwards, add what feels necessary, DRY up whatever I possibly can
 * STRETCH: add column to group that tracks when user last studied, then add scope order method
 * STRETCH: add leitner study system?
 * STRETCH: add subscription function
@@ -52,3 +47,8 @@ NOTES:
 * partial - repetitive html
 * helper - view logic 
 * model method - model logic 
+
+
+
+<!-- Solution to dynamically add cards to form? -->
+

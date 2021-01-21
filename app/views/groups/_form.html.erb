@@ -1,0 +1,36 @@
+<%= form_for (@group) do |f| %>
+
+
+    <p>
+        <%= f.label :title, "Group Title:" %>
+        <%= f.text_field :title %>
+    </p>
+    <p>
+        <%= f.label :description, "Group Description:" %>
+        <%= f.text_field :description %>
+    </p>
+    <p>
+    Select a pre-existing category: <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+    <br />
+    <br />
+    
+    <%= f.fields_for :category do |c| %>
+        <%= c.label :name, "OR create a new category:" %>
+        <%= c.text_field :name %>
+    <% end %>
+    </p>
+    <p>
+    <h3>Cards</h3>
+    <%= f.fields_for :cards do |c| %>
+        <%= c.label :front %>
+        <%= c.text_field :front %>
+
+        <%= c.label :back %>
+        <%= c.text_field :back %>
+        <br />
+    <% end %>
+    </p>
+    <br />
+    <%= f.submit 'Submit' %>
+<% end %>
+
