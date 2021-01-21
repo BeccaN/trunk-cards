@@ -15,12 +15,14 @@
 
  .topnav, .logo, .links, .wrapper
  */
+ 
 * {
     font-family: 'Roboto Mono', monospace;
+    color: #122342;
 }
 
 body {
-    background-color: #53d3fa;
+    background-color: #8CD5FF;
 }
 
 .wrapper {
@@ -37,9 +39,3 @@ body {
 .nav .links {
     float: right;
 }
-
-.field_with_errors {
-    padding: 2px;
-    background-color: red;
-    display: table;
-  }

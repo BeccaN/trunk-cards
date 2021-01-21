@@ -4,7 +4,7 @@ class Group < ApplicationRecord
     belongs_to :user
 
     accepts_nested_attributes_for :category, reject_if: proc { |attributes| attributes['name'].blank? }
-    accepts_nested_attributes_for :cards, allow_destroy: true
+    accepts_nested_attributes_for :cards
 
     validates :title, :description, presence: true
 
@@ -16,4 +16,13 @@ class Group < ApplicationRecord
             self.category = category
         end 
     end
+
+    def cards_attributes=(attributes)
+        attributes.values.each do |a|
+            if !a["front"].blank? || !a["back"].blank?
+                card = Card.create(front: a["front"], back: a["back"])
+                self.cards << card
+            end
+        end
+    end  
 end

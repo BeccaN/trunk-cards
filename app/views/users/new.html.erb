@@ -1,6 +1,18 @@
 <h2>Sign Up</h2>
 
 <%= form_for(@user, url:'/signup') do |f| %>
+    
+    <% if @user.errors.any? %>
+    <h3 style="color:#128FE3">Errors:</h3>
+        <div class="errors">
+            <ul>
+            <% error_display(@user).each do |msg|%>
+                <li><%= msg %></li> 
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br />

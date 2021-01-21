@@ -17,19 +17,19 @@ class GroupsController < ApplicationController
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @group = @user.groups.build
             @group.build_category
-            5.times {@group.cards.build}
+            20.times {@group.cards.build}
         else
             @group = Group.new
         end
     end
 
     def create
-
         @group = current_user.groups.build(group_params)
-
         if @group.save
             redirect_to user_groups_path(current_user)
         else
+            @group.build_category
+            20.times {@group.cards.build}
             render :new
         end
     end

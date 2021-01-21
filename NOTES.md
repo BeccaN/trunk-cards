@@ -24,10 +24,12 @@ Confirm:
 - [ ] Views use partials if appropriate
 
 TODO:
-* add in flash[:messages] to validations?, before_actions/checks for 'current_user' and 'logged_in?' when appropriate
+* create two index views for front and back of cards
+* card creation is optional? - custom setter method that checks if blank? then skips and saves the rest.
+
 * go through all Rails lessons backwards, add what feels necessary, DRY up whatever I possibly can
 * create scope order categories by total groups
-* card creation is optional?
+
 * add category search filter
 * beautify all pages
     * welcome
@@ -47,8 +49,3 @@ NOTES:
 * partial - repetitive html
 * helper - view logic 
 * model method - model logic 
-
-
-
-<!-- Solution to dynamically add cards to form? -->
-
