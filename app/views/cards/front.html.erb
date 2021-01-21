@@ -1,0 +1,10 @@
+<h1>All Terms</h1>
+<div>
+    <ol>
+        <% @cards.each do |card| %>
+            <li><%= card.front %></li>
+        <% end %>
+    </ol>
+</div>
+
+<%= button_to 'See Definitions', cards_back_path(@group), method: :get, :class => 'btn-style-spc' %>

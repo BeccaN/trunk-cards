@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   #welcome/home route
   root 'sessions#home'
+
+  match '/auth/github/callback', to: 'sessions#github', via: [:get, :post]
   
   #signup route
   get '/signup', to: 'users#new'
@@ -24,5 +26,6 @@ Rails.application.routes.draw do
 
   resources :cards #might be able to delete, test this after the group form is complete and working
 
-  match '/auth/github/callback', to: 'sessions#github', via: [:get, :post]
+  get '/groups/:id/cards/front/index', to: 'cards#front', via: [:get], as: 'cards_front'
+  get '/groups/:id/cards/back/index', to: 'cards#back', via: [:get], as: 'cards_back'
 end

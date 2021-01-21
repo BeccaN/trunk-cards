@@ -24,13 +24,7 @@ Confirm:
 - [ ] Views use partials if appropriate
 
 TODO:
-* create two index views for front and back of cards
-* card creation is optional? - custom setter method that checks if blank? then skips and saves the rest.
-
 * go through all Rails lessons backwards, add what feels necessary, DRY up whatever I possibly can
-* create scope order categories by total groups
-
-* add category search filter
 * beautify all pages
     * welcome
     * login
@@ -41,6 +35,8 @@ TODO:
     * group/study
     * new group
     * edit group
+* add category search filter
+* add cute blod 'sorry' "real study mode in progress" disclaimer
 * STRETCH: add column to group that tracks when user last studied, then add scope order method
 * STRETCH: add leitner study system?
 * STRETCH: add subscription function

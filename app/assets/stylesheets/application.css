@@ -39,3 +39,19 @@ body {
 .nav .links {
     float: right;
 }
+
+.btn-style {
+    background: #CAD2D9;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-style-spc {
+    font-weight: bold;
+    background: #EDE855;
+    padding: 8px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #122342;
+}

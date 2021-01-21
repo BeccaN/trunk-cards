@@ -6,5 +6,5 @@ class Category < ApplicationRecord
     validates_uniqueness_of :name, :case_sensitive => false
 
     scope :ordered_by_name, -> { reorder(name: :asc) }
-    
+
 end

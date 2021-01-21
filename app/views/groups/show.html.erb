@@ -1,7 +1,11 @@
-<h1><%= @group.title %></h1>
+<h1>Title: <%= @group.title %></h1>
+<h3>Category: <%= @group.category.name %></h3>
 
 <% @group.cards.each do |card| %>
 <li><%= card.front %> - <%= card.back%></li>
 <% end %>
 
-<%= link_to 'Edit Group Contents', edit_group_path(@group) %>
+<br />
+<%= button_to 'Study This Group', cards_front_path(@group), method: :get, :class => 'btn-style-spc' %>
+<br />
+<%= button_to 'Edit Group Contents', edit_group_path(@group), method: :get, :class => 'btn-style' %>

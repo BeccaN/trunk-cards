@@ -12,14 +12,17 @@
     <% end %>
 
     <p>
+    <h3>Group Info:</h3>
         <%= f.label :title, "Group Title:" %>
         <%= f.text_field :title %>
-    </p>
-    <p>
+        <br />
+        <br />
         <%= f.label :description, "Group Description:" %>
         <%= f.text_field :description %>
     </p>
+
     <p>
+    <h3>Category:</h3>
     Select a pre-existing category: <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true %>
     <br />
     <br />
@@ -29,8 +32,9 @@
         <%= c.text_field :name %>
     <% end %>
     </p>
+
     <p>
-    <h3>Cards</h3>
+    <h3>Cards:</h3>
     <%= f.fields_for :cards do |c| %>
         <%= c.label :front %>
         <%= c.text_field :front %>
@@ -41,6 +45,6 @@
     <% end %>
     </p>
     <br />
-    <%= f.submit 'Submit' %>
+    <%= f.submit 'Submit', :class => 'btn-style' %>
 <% end %>
 

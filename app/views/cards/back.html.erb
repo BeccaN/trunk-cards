@@ -1,0 +1,12 @@
+<h1>All Definitions</h1>
+<div>
+    <ol>
+        <% @cards.each do |card| %>
+            <li><%= card.back %></li>
+        <% end %>
+    </ol>
+</div>
+
+<%= button_to 'Go Back To Terms', cards_front_path(@group), method: :get, :class => 'btn-style-spc' %>
+<br />
+<%= button_to 'Return To Group Page', group_path(@group), method: :get, :class => 'btn-style-spc' %>
