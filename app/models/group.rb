@@ -16,5 +16,4 @@ class Group < ApplicationRecord
             self.category = category
         end 
     end
-
 end

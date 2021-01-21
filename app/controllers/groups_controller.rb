@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
 
     def index
-        #if params[:user_id] && @user = User.find_by_id(params[:user_id]) - not necessary to check for params[:user_id] because it should always be there now, since the alternative isn't possible.
         if @user = User.find_by_id(params[:user_id])
             @groups = @user.groups.ordered_by_create
         else
@@ -25,12 +24,13 @@ class GroupsController < ApplicationController
     end
 
     def create
+
         @group = current_user.groups.build(group_params)
 
         if @group.save
             redirect_to user_groups_path(current_user)
         else
-            redirect_to new_user_group_path(current_user)
+            render :new
         end
     end
 
@@ -55,7 +55,7 @@ class GroupsController < ApplicationController
 
         def group_params
             params.require(:group).permit(:title, :description, :category_id, category_attributes: [:name], 
-                cards_attributes: [:front, :back].push(:_destroy))
+                cards_attributes: [:front, :back])
         end
 
 end 

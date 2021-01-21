@@ -1,5 +1,14 @@
 <%= form_for (@group) do |f| %>
-
+    <% if @group.errors.any? %>
+        <div id="error_exp">
+            <h2>Errors:</h2>
+            <ul>
+                <% @group.errors.messages.each do |error| %>
+                    <li><%= error %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
     <p>
         <%= f.label :title, "Group Title:" %>
