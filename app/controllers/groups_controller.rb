@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
     before_action :redirect_if_not_logged_in
+    skip_before_action :redirect_if_not_logged_in, only: [:edit, :destroy]
 
     def index
         if find_user
@@ -37,6 +38,10 @@ class GroupsController < ApplicationController
 
     def edit
         find_group
+        if current_user != find_group.user 
+            flash[:message] = "Sorry that doesn't belong to you..."
+            redirect_to user_groups_path(current_user)
+        end
     end
 
     def update
@@ -47,9 +52,13 @@ class GroupsController < ApplicationController
 
     def destroy
         find_group
-        @group.destroy
-
-        redirect_to root_path
+        if current_user != find_group.user 
+            flash[:message] = "Sorry that doesn't belong to you..."
+            redirect_to user_groups_path(current_user)
+        else
+            @group.destroy
+            redirect_to user_groups_path(current_user)
+        end
     end
 
     private

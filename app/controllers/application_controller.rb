@@ -12,8 +12,10 @@ class ApplicationController < ActionController::Base
     end
 
     def redirect_if_not_logged_in
-        flash[:message] = "Please log into your account to view that page."
-        redirect_to '/' if !logged_in?
+        if !logged_in?
+            flash[:message] = "Please log into your account to view that page."
+            redirect_to root_path
+        end 
     end
     
     def find_user

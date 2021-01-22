@@ -1,5 +1,5 @@
 <h2><%= @category.name %></h2>
 
 <% @category.groups.each do |group| %>
-<li><%= group.title %></li>
+    <li><%= link_to group.title, group_path(group) %></li>
 <% end %>
