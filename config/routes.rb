@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :groups, only: [:new, :create, :index]
   end
 
-  resources :users, only: [:new, :create, :index] #eventually delete user#show once we replace all necessary links to users/id/groups
+  resources :users, only: [:new, :create, :index]
   resources :groups
   resources :categories, only: [:index, :show]
 

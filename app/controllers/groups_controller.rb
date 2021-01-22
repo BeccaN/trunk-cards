@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
+    before_action :redirect_if_not_logged_in
 
     def index
-        if @user = User.find_by_id(params[:user_id])
+        if find_user
             @groups = @user.groups.ordered_by_create
         else
             flash[:message] = "That user doesn't exist..." if params[:user_id]
@@ -10,11 +11,11 @@ class GroupsController < ApplicationController
     end
 
     def show
-        @group = Group.find_by(params[:id])
+        find_group
     end
 
     def new
-        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+        if params[:user_id] && find_user
             @group = @user.groups.build
             @group.build_category
             20.times {@group.cards.build}
@@ -35,17 +36,17 @@ class GroupsController < ApplicationController
     end
 
     def edit
-        @group = Group.find_by(params[:id])
+        find_group
     end
 
     def update
-        @group = Group.find_by(params[:id])
+        find_group
         @group.update(group_params)
         redirect_to user_groups_path(current_user)
     end
 
     def destroy
-        @group = Group.find_by(params[:id])
+        find_group
         @group.destroy
 
         redirect_to root_path

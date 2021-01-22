@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-    
-
     def home
     end
 
@@ -10,7 +8,6 @@ class SessionsController < ApplicationController
     end
 
     def new
-
     end
 
     def create

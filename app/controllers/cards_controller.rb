@@ -1,11 +1,13 @@
 class CardsController < ApplicationController
+    before_action :redirect_if_not_logged_in
+
     def front
-        @group = Group.find_by_id(params[:id])
+        find_group
         @cards = @group.cards
     end
 
     def back
-        @group = Group.find_by_id(params[:id])
+        find_group
         @cards = @group.cards
     end
 end 
