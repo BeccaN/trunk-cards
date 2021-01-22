@@ -24,8 +24,7 @@ Rails.application.routes.draw do
   resources :groups
   resources :categories, only: [:index, :show]
 
-  resources :cards #might be able to delete, test this after the group form is complete and working
-
   get '/groups/:id/cards/front/index', to: 'cards#front', via: [:get], as: 'cards_front'
   get '/groups/:id/cards/back/index', to: 'cards#back', via: [:get], as: 'cards_back'
+  resources :cards, only: [:index]
 end

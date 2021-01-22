@@ -1,5 +1,5 @@
 <h2>Welcome</h2>
 
 <%= link_to "Sign Up", signup_path %> | 
-<%= link_to "Login", login_path %> | 
-<%= link_to "Log In With GITHUB", '/auth/github', method: :post %>
+<%= button_to "Login", login_path %> | 
+<%= button_to "Log In With GITHUB", '/auth/github', method: :post, :class => 'btn-style-spc' %>
