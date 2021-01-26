@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 
   #logout route
   delete '/logout', to: 'sessions#destroy'
-
+  #create doesnt have to be nested
   resources :users do
-    resources :groups, only: [:new, :create, :index]
+    resources :groups, only: [:new, :index]
   end
 
   resources :users, only: [:new, :create, :index]
