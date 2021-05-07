@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-    before_action :redirect_if_not_logged_in
+    before_action :redirect_if_not_logged_in #call find_group
     skip_before_action :redirect_if_not_logged_in, only: [:edit, :destroy]
 
     def index
