@@ -36,10 +36,6 @@ body {
     width: 85%;
   }
 
-.nav .links {
-    float: right;
-}
-
 .btn-style {
     background: #CAD2D9;
     padding: 5px;
@@ -54,4 +50,24 @@ body {
     border-radius: 5px;
     border-style: solid;
     border-color: #122342;
+    margin: 3px;
+}
+
+.btn-style-spc:hover {
+    background-color: yellowgreen;
+}
+
+/* h1 {
+    background-color: #122342;
+    color: white;
+    padding: 6px;
+} */
+
+h2 {
+    background-color: #EDE855;
+    padding: 5px;
+}
+
+.form_input {
+    padding-bottom: 7px;
 }

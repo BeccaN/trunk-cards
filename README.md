@@ -9,15 +9,13 @@ This Rails based application is a simple flashcard set manager. Users can create
 ```console
     $ bundle install
 ```
-3. Run migrations to get the database started
+3. Run migrations and start up the server!
 ```console
-    $ rails db:migrate
+    $ rails db:migrate && rails s
 ```
-4. Start Rails server
-```console
-    $ rails s
-```
+
 5. Go to localhost:3000 in your browser
+
 6. Create an account and start making flash cards!
 
 ##Contributing Guide

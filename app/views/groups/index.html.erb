@@ -1,4 +1,8 @@
-<h1>Groups Index</h1>
+<h2>Groups Index</h2>
+
+<% if @groups.length === 0 %>
+    <p>Click the 'Create Group' link above to make your first flash card set!</p>
+<% end %>
 
 <% @groups.each do |group| %>
     <li><%= link_to group.title, group_path(group) %> | <%= group.description %> | <%= group.category.name %></li>

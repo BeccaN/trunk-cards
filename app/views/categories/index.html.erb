@@ -1,9 +1,11 @@
 <h2>All Categories</h2>
 
-<%= form_tag('/categories', method: :get) do %>
-  <input type="text" name="search">
-  <input type="submit" name="Submit">
-<% end %>
+<div style="">
+  <%= form_tag('/categories', method: :get) do %>
+    <input type="text" name="search" placeholder="category search">
+    <input type="submit" name="Submit">
+  <% end %>
+</div>
 
 <% @categories.each do |category| %>
 <li><%= link_to category.name, category_path(category) %></li>

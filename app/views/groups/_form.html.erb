@@ -14,11 +14,11 @@
     <p>
     <h3>Group Info:</h3>
         <%= f.label :title, "Group Title:" %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, :placeholder => 'title' %>
         <br />
         <br />
         <%= f.label :description, "Group Description:" %>
-        <%= f.text_field :description %>
+        <%= f.text_field :description, :placeholder => 'set description' %>
     </p>
 
     <p>
@@ -29,7 +29,7 @@
     
     <%= f.fields_for :category do |c| %>
         <%= c.label :name, "OR create a new category:" %>
-        <%= c.text_field :name %>
+        <%= c.text_field :name, :placeholder => 'category title' %>
     <% end %>
     </p>
 
@@ -37,10 +37,10 @@
     <h3>Cards:</h3>
     <%= f.fields_for :cards do |c| %>
         <%= c.label :front %>
-        <%= c.text_field :front %>
+        <%= c.text_field :front, :placeholder => 'term' %>
 
         <%= c.label :back %>
-        <%= c.text_field :back %>
+        <%= c.text_field :back, :placeholder => 'definition' %>
         <br />
     <% end %>
     </p>

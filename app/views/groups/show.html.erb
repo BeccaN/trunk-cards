@@ -1,14 +1,18 @@
-<h1>Title: <%= @group.title %></h1>
-<h2>Created By: <%= @group.user.name %></h2>
-<h3>Category: <%= @group.category.name %></h3>
+<h2>Title: <%= @group.title %></h2>
+<div style="display: flex;">
+  <h3 style="padding-right: 7px;">Created By: <%= @group.user.name %></h3>
+  <h3>Category: <%= @group.category.name %></h3>
+</div>
 
 <% @group.cards.each do |card| %>
 <li><%= card.front %> - <%= card.back%></li>
 <% end %>
 
 <br />
-<%= button_to 'Study This Group', cards_front_path(@group), method: :get, :class => 'btn-style-spc' %>
-<br />
-<% if current_user == @group.user %>
-<%= button_to 'Edit Group Contents', edit_group_path(@group), method: :get, :class => 'btn-style' %>
-<% end %>
+<div style="display: flex; justify-content: center;">
+  <%= button_to 'Study This Group', cards_front_path(@group), method: :get, :class => 'btn-style-spc' %>
+  
+  <% if current_user == @group.user %>
+  <%= button_to 'Edit Group Contents', edit_group_path(@group), method: :get, :class => 'btn-style-spc' %>
+  <% end %>
+</div>

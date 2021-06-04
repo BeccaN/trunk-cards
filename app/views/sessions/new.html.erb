@@ -1,10 +1,15 @@
-<h2>Login</h2>
-<%= form_for :user do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <br />
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+<div style="text-align: left;">
+    <h2>Login</h2>
 
-    <%= f.submit 'Login' %>
-<% end %>
+    <%= form_for :user do |f| %>
+        <div class="form_input">
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+        </div>
+        <div class="form_input">
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+        </div>
+        <%= f.submit 'Login', :class => 'btn-style' %>
+    <% end %>
+</div>

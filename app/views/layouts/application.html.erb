@@ -16,24 +16,26 @@
   <body>
     <div class='wrapper'>
     <div class='nav'>
-
       <% if logged_in? %>
-      <div class="links">
-        <%= link_to current_user.name, user_groups_path(current_user) %> | 
-        <%= link_to 'Logout', logout_path, method:'delete' %> | 
-        <%= link_to 'Create Group', new_user_group_path(current_user) %> | 
-        <%= link_to 'Categories', categories_path %>
-      </div>
-      <% end %>
-      <br />
-      <h1 style="background-color: #122342; color: white;">Trunk Cards</h1>
-      <br />
-      <% if flash[:message] %>
-          <h3 style="color:#128FE3"><%= flash[:message] %></h3>
+        <div style="display: flex; justify-content: space-between; background-color: #122342; padding-left: 7px; padding-right: 7px;">
+          <h1 style="color: white;">Trunk Cards</h1>
+          <div style="align-self: center; color: white;">
+            <%= link_to current_user.name, user_groups_path(current_user), :style => 'color: white;' %> | 
+            <%= link_to 'Logout', logout_path, method:'delete', :style => 'color: white;' %> | 
+            <%= link_to 'Create Group', new_user_group_path(current_user), :style => 'color: white;' %> | 
+            <%= link_to 'Categories', categories_path, :style => 'color: white;' %>
+          </div>
+        </div>
+      <% else %>
+        <h1>Trunk Cards</h1>
       <% end %>
     </div>
 
-  <%= yield %>
+    <% if flash[:message] %>
+      <h3 style="color:#128FE3"><%= flash[:message] %></h3>
+    <% end %>
+
+    <%= yield %>
     </div>
   </body>
 </html>

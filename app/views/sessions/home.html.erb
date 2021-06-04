@@ -1,5 +1,9 @@
-<h2>Welcome</h2>
-
-<%= button_to "Sign Up", signup_path, method: :get, :class => 'btn-style-spc' %>
-<%= button_to "Login", login_path, method: :get, :class => 'btn-style-spc' %>
-<%= button_to "Log In With GITHUB", '/auth/github', method: :post, :class => 'btn-style-spc' %>
+<div style="text-align: center;">
+  <h2>Welcome</h2>
+  <p>Trunk Cards is a simple flashcard set manager. Users can create an account or login using Github, and create various different flash card sets and then review through their terms.</p>
+  <div style="display: flex; justify-content: center;">
+    <%= button_to "Sign Up", signup_path, method: :get, :class => 'btn-style-spc' %>
+    <%= button_to "Login", login_path, method: :get, :class => 'btn-style-spc' %>
+    <%= button_to "Log In With GITHUB", '/auth/github', method: :post, :class => 'btn-style-spc' %>
+  <div>
+</div>

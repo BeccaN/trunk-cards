@@ -1,27 +1,31 @@
-<h2>Sign Up</h2>
+<div style="text-align: left;">
+    <h2>Sign Up</h2>
 
-<%= form_for(@user, url:'/signup') do |f| %>
-    
-    <% if @user.errors.any? %>
-    <h3 style="color:#128FE3">Errors:</h3>
-        <div class="errors">
-            <ul>
-            <% error_display(@user).each do |msg|%>
-                <li><%= msg %></li> 
-            <% end %>
-            </ul>
+    <%= form_for(@user, url:'/signup') do |f| %>
+        
+        <% if @user.errors.any? %>
+        <h3 style="color:#128FE3">Errors:</h3>
+            <div class="errors">
+                <ul>
+                <% error_display(@user).each do |msg|%>
+                    <li><%= msg %></li> 
+                <% end %>
+                </ul>
+            </div>
+        <% end %>
+        <div style="display: flex;" class="form_input">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
         </div>
+        <div style="display: flex;" class="form_input">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+        </div>
+        <div style="display: flex;" class="form_input">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        </div>
+
+        <%= f.submit 'Submit', :class => 'btn-style' %>
     <% end %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br />
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <br />
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br />
-
-    <%= f.submit 'Submit' %>
-<% end %>
+</div>
