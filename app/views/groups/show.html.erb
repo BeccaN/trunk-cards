@@ -10,9 +10,9 @@
 
 <br />
 <div style="display: flex; justify-content: center;">
-  <%= button_to 'Study This Group', cards_front_path(@group), method: :get, :class => 'btn-style-spc' %>
+  <%= button_to 'Study This Set', cards_front_path(@group), method: :get, :class => 'btn-style-spc' %>
   
   <% if current_user == @group.user %>
-  <%= button_to 'Edit Group Contents', edit_group_path(@group), method: :get, :class => 'btn-style-spc' %>
+  <%= button_to 'Edit Set Contents', edit_group_path(@group), method: :get, :class => 'btn-style-spc' %>
   <% end %>
 </div>

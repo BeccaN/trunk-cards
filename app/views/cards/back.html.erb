@@ -7,6 +7,7 @@
     </ol>
 </div>
 
-<%= button_to 'Go Back To Terms', cards_front_path(@group), method: :get, :class => 'btn-style-spc' %>
-<br />
-<%= button_to 'Return To Group Page', group_path(@group), method: :get, :class => 'btn-style-spc' %>
+<div style="display: flex;">
+    <%= button_to 'Go Back To Terms', cards_front_path(@group), method: :get, :class => 'btn-style-spc' %>
+    <%= button_to 'Return To Set Home Page', group_path(@group), method: :get, :class => 'btn-style-spc' %>
+</div>

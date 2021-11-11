@@ -22,7 +22,7 @@
           <div style="align-self: center; color: white;">
             <%= link_to current_user.name, user_groups_path(current_user), :style => 'color: white;' %> | 
             <%= link_to 'Logout', logout_path, method:'delete', :style => 'color: white;' %> | 
-            <%= link_to 'Create Group', new_user_group_path(current_user), :style => 'color: white;' %> | 
+            <%= link_to 'Create New Set', new_user_group_path(current_user), :style => 'color: white;' %> | 
             <%= link_to 'Categories', categories_path, :style => 'color: white;' %>
           </div>
         </div>

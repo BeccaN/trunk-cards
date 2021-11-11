@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
     end
 
     def github
+        
         @user = User.github_omniauth(auth)
         if @user.valid?
             session[:user_id] = @user.id
