@@ -2,6 +2,8 @@
 
 This Rails based application is a simple flashcard set manager. Users can create an account or login using Github, and create various different flash card sets and then review through their terms. 
 
+[Demo Guide](https://www.youtube.com/watch?v=q39Yl6Vjpvo&t=2s)
+
 ##Installation Instructions
 
 1. Clone and open the repo
